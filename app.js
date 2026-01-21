@@ -4,12 +4,12 @@ const expressSession = require('express-session')
 const dotenv = require('dotenv')
 const fileUpload = require('express-fileupload')
 const {engine} = require('express-handlebars')
-const conn = require(path.join(__dirname, 'conn.js'))
+//const conn = require(path.join(__dirname, 'conn.js'))
 
 
 
 // default setting and variables 
-conn()
+//conn()
 const app = express()
 dotenv.config()
 const PORT = process.env.PORT || 8000
