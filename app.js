@@ -1,3 +1,4 @@
+const path = require('path')
 const conn = require(path.join(__dirname, 'conn.js'))
 const express = require('express')
 const path = require('path')
@@ -45,7 +46,9 @@ app.use((req, res, next)=>{
    next()
 })
 
-
+app.get('/', (req, res) => {
+  res.send('GS Sitesi Render üzerinde çalışıyor ')
+})
 // Router include area
 const mainPage = require(path.join(__dirname, 'router', 'mainPage.js'))
 const aboutPage = require(path.join(__dirname, 'router', 'aboutPage.js'))
