@@ -1,3 +1,4 @@
+const conn = require(path.join(__dirname, 'conn.js'))
 const express = require('express')
 const path = require('path')
 const expressSession = require('express-session')
@@ -12,6 +13,7 @@ const {engine} = require('express-handlebars')
 //conn()
 const app = express()
 dotenv.config()
+conn()
 const PORT = process.env.PORT || 8000
 const API_URL = process.env.API_URL || `http://127.0.0.1:${PORT}`
 const SESSION_SECRET = process.env.SESSION_SECRET || 'deneme';
