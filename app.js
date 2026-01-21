@@ -1,7 +1,6 @@
 const path = require('path')
 const conn = require(path.join(__dirname, 'conn.js'))
 const express = require('express')
-const path = require('path')
 const expressSession = require('express-session')
 const dotenv = require('dotenv')
 const fileUpload = require('express-fileupload')
