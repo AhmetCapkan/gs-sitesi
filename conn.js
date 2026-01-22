@@ -2,16 +2,18 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 
 const conn = async () => {
-  if (!process.env.DB_URL) {
-    console.log('MongoDB yok (Render demo modu)')
+  // Burayı MONGODB_URI yaptık
+  if (!process.env.MONGODB_URI) {
+    console.log('MongoDB yok (Vercel modu)')
     return
   }
 
   try {
-    await mongoose.connect(process.env.DB_URL, { dbName: 'blog' })
+    // Burayı da MONGODB_URI yaptık
+    await mongoose.connect(process.env.MONGODB_URI, { dbName: 'blog' })
     console.log('MongoDB bağlandı')
   } catch (err) {
-    console.log('MongoDB hata ama site çalışıyor')
+    console.log('MongoDB hata:', err)
   }
 }
 
